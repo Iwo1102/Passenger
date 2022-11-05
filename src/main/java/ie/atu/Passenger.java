@@ -12,6 +12,7 @@ public class Passenger {
         name(name);
         id(id);
         phone(phone);
+        age(age);
     }
 
     public static String title(String title) {
