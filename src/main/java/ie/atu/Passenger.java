@@ -8,11 +8,11 @@ public class Passenger {
     int age;
 
     public Passenger(String title, String name, int id, int phone, int age) {
-        title(title);
-        name(name);
-        id(id);
-        phone(phone);
-        age(age);
+        this.title = title(title);
+        this.name = name(name);
+        this.id = id(id);
+        this.phone = phone(phone);
+        this.age = age(age);
     }
 
     public static String title(String title) {
