@@ -5,6 +5,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.io.Serial;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 
@@ -71,10 +73,23 @@ class PassengerTest {
     @Test
     void testFailAge()
     {
-        Exception e_message = assertThrows(IllegalArgumentException.class, () -> new Passenger ("mr", "Iwo", 1622991122, 1231231, 18));
+        Exception e_message = assertThrows(IllegalArgumentException.class, () -> new Passenger ("mr", "Iwo", 1622991122, 1231231, 11));
         assertEquals("Must be at least 16 years of age to fly",e_message.getMessage());
     }
 
+    @Test
+    void testObject()
+    {
+        Passenger passTest;
+        passTest = new Passenger("mr", "Iwo", 1622991122, 23123166, 22);
+    }
+    @Test
+    void testFailObject()
+    {
+
+        Exception e_message = assertThrows(IllegalArgumentException.class, () -> new Passenger ("mr", "Iwo", 1622991122, 1231231, 16));
+        assertEquals("",e_message.getMessage());
+    }
 
     @AfterEach
     void tearDown() {
