@@ -39,6 +39,17 @@ class PassengerTest {
         assertEquals("Name has to have a minimum of 3 characters",e_message.getMessage());
     }
 
+    @Test
+    void TestID()
+    {
+        assertEquals(1622991122, Passenger.id(1622991122));
+    }
+    @Test
+    void testFailID()
+    {
+        Exception e_message = assertThrows(IllegalArgumentException.class, () -> new Passenger ("mr", "Iwo", 1622991122, 1245612, 32));
+        assertEquals("ID has to have a minimum of 10 digits",e_message.getMessage());
+    }
 
     @AfterEach
     void tearDown() {

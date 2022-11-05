@@ -10,6 +10,7 @@ public class Passenger {
     public Passenger(String title, String name, int id, int phone, int age) {
         title(title);
         name(name);
+        id(id);
     }
 
     public static String title(String title) {
@@ -32,6 +33,24 @@ public class Passenger {
         else
         {
             return name;
+        }
+    }
+
+    public static int id(int s) {
+        int count = 0;
+        int n = s;
+        while (n != 0)
+        {
+            n = n/10;
+            count++;
+        }
+        if(count < 10)
+        {
+            throw new IllegalArgumentException("ID has to have a minimum of 10 digits");
+        }
+        else
+        {
+            return s;
         }
     }
 
