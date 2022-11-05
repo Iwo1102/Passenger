@@ -8,11 +8,31 @@ public class Passenger {
     int age;
 
     public Passenger(String title, String name, int id, int phone, int age) {
-        setTitle(title);
-        setName(name);
-        setId(id);
-        setPhone(phone);
-        setAge(age);
+        title(title);
+        name(name);
+    }
+
+    public static String title(String title) {
+        char titleChar[] = title.toCharArray();
+        if ("Mr".equalsIgnoreCase(title) || "Ms".equalsIgnoreCase(title) || "Mrs".equalsIgnoreCase(title)) {
+            //make sure all chars are in correct cases
+            titleChar[0] = 'M';
+            title = String.valueOf(titleChar);
+            return title;
+        } else {
+            throw new IllegalArgumentException("Can only be Mr, Ms or Mrs");
+        }
+    }
+
+    public static String name(String name) {
+        if(name.length() < 3)
+        {
+            throw new IllegalArgumentException("Name has to have a minimum of 3 characters");
+        }
+        else
+        {
+            return name;
+        }
     }
 
     public String getTitle() {
@@ -47,15 +67,5 @@ public class Passenger {
     }
 
 
-    public static String Title(String title) {
-        char titleChar[] = title.toCharArray();
-        if ("Mr".equalsIgnoreCase(title) || "Ms".equalsIgnoreCase(title) || "Mrs".equalsIgnoreCase(title)) {
-            //make sure all chars are in correct cases
-            titleChar[0] = 'M';
-            title = String.valueOf(titleChar);
-            return title;
-        } else {
-            throw new IllegalArgumentException("Can only be Mr, Ms or Mrs");
-        }
-    }
+
 }

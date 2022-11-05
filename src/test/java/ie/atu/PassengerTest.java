@@ -11,24 +11,33 @@ import static org.junit.jupiter.api.Assertions.*;
 class PassengerTest {
     @BeforeEach
     void setUp() {
+
     }
 
 
     @Test
     void testTitle(){
-        assertEquals("Mrs", Passenger.Title("mrs"));
-    }
-    @Test
-    void testFailTitle(){
-        try
-        {
-            Passenger.Title("rs");
-            fail("Correct input");
-        } catch (RuntimeException e){
-            assertNotNull(e);
-        }
+       assertEquals("Mr", Passenger.title("mr"));
     }
 
+    @Test
+    void testFailTitle()
+    {
+        Exception e_message = assertThrows(IllegalArgumentException.class, () -> new Passenger ("m", "Iwo", 12346, 1245612, 32));
+        assertEquals("Can only be Mr, Ms or Mrs",e_message.getMessage());
+    }
+
+    @Test
+    void TestName()
+    {
+        assertEquals("Iwo", Passenger.name("Iwo"));
+    }
+    @Test
+    void testFailName()
+    {
+        Exception e_message = assertThrows(IllegalArgumentException.class, () -> new Passenger ("mr", "Io", 12346, 1245612, 32));
+        assertEquals("Name has to have a minimum of 3 characters",e_message.getMessage());
+    }
 
 
     @AfterEach
