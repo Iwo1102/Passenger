@@ -51,6 +51,19 @@ class PassengerTest {
         assertEquals("ID has to have a minimum of 10 digits",e_message.getMessage());
     }
 
+    @Test
+    void TestPhone()
+    {
+        assertEquals(1231231, Passenger.phone(1231231));
+    }
+    @Test
+    void testFailPhone()
+    {
+        Exception e_message = assertThrows(IllegalArgumentException.class, () -> new Passenger ("mr", "Iwo", 1622991122, 123123, 32));
+        assertEquals("Phone number has to have a minimum of 7 digits",e_message.getMessage());
+    }
+
+
     @AfterEach
     void tearDown() {
     }
