@@ -63,6 +63,18 @@ class PassengerTest {
         assertEquals("Phone number has to have a minimum of 7 digits",e_message.getMessage());
     }
 
+    @Test
+    void TestAge()
+    {
+        assertEquals(18, Passenger.age(13));
+    }
+    @Test
+    void testFailAge()
+    {
+        Exception e_message = assertThrows(IllegalArgumentException.class, () -> new Passenger ("mr", "Iwo", 1622991122, 1231231, 12));
+        assertEquals("Must be at least 16 years of age to fly",e_message.getMessage());
+    }
+
 
     @AfterEach
     void tearDown() {

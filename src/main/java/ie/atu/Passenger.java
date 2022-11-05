@@ -21,20 +21,15 @@ public class Passenger {
             titleChar[0] = 'M';
             title = String.valueOf(titleChar);
             return title;
-        } else {
+        } else
             throw new IllegalArgumentException("Can only be Mr, Ms or Mrs");
-        }
     }
 
     public static String name(String name) {
         if(name.length() < 3)
-        {
             throw new IllegalArgumentException("Name has to have a minimum of 3 characters");
-        }
         else
-        {
             return name;
-        }
     }
 
     public static int id(int s) {
@@ -46,13 +41,9 @@ public class Passenger {
             count++;
         }
         if(count < 10)
-        {
             throw new IllegalArgumentException("ID has to have a minimum of 10 digits");
-        }
         else
-        {
             return s;
-        }
     }
 
     public static int phone(int s) {
@@ -64,13 +55,17 @@ public class Passenger {
             count++;
         }
         if(count < 7)
-        {
             throw new IllegalArgumentException("Phone number has to have a minimum of 7 digits");
-        }
         else
-        {
             return s;
-        }
+    }
+
+    public static int age(int i)
+    {
+        if (i < 16)
+            throw new IllegalArgumentException("Must be at least 16 years of age to fly");
+        else
+            return i;
     }
 
     public String getTitle() {
