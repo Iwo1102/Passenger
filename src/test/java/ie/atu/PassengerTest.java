@@ -81,7 +81,7 @@ class PassengerTest {
     void testObject()
     {
         Passenger passTest;
-        passTest = new Passenger("mr", "Iwo", 1622991122, 23123166, 22);
+        passTest = new Passenger("r", "Iwo", 1622991122, 23123166, 22);
     }
     @Test
     void testFailObject()
