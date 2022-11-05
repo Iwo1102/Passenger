@@ -81,14 +81,7 @@ class PassengerTest {
     void testObject()
     {
         Passenger passTest;
-        passTest = new Passenger("r", "Iwo", 1622991122, 23123166, 22);
-    }
-    @Test
-    void testFailObject()
-    {
-
-        Exception e_message = assertThrows(IllegalArgumentException.class, () -> new Passenger ("mr", "Iwo", 1622991122, 1231231, 16));
-        assertEquals("",e_message.getMessage());
+        passTest = new Passenger("mr", "Iwo", 1622991122, 23123166, 22);
     }
 
     @AfterEach
